@@ -1,0 +1,10 @@
+<h1>Add new post!</h1>
+<% if Tag.exists? %>
+
+<% else%>
+	<p>You have no tag. Please add tag!!</p>
+	<%= link_to "Add tags", tags_path %>
+<%end%>
+	
+<%= render 'form' %>
+<%= link_to 'Back', posts_path %>

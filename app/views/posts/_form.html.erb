@@ -1,0 +1,13 @@
+<%= form_for @post do |f| %>
+  <%= f.label :title %> <br>
+  <%= f.text_field :title %><br>
+  <%= f.label :text %> <br>
+  <%= f.text_area :text %><br>
+  <%= f.submit %>
+<% end %>
+
+<%= form_for @tag do |f| %>
+  <% @tags.each do |tag| %>
+    <p>Name tag: <%= tag.name %></p>
+  <% end %> 
+<% end %>

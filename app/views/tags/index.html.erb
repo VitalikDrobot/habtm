@@ -1,0 +1,8 @@
+<h1>All post:</h1>
+<%= link_to "Create new tag", new_tag_path %>
+<% @tags.each do |tag| %>
+  <p>Name tag: <%= tag.name %></p>
+  <%= link_to 'Show', tag %>
+  <%= link_to 'Edit', edit_tag_path(tag) %>
+  <%= link_to 'Delete', tag_path(tag), method: :delete %>
+<% end %> 
