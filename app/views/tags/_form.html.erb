@@ -1,9 +1,6 @@
 <%= form_for @tag do |f| %>
   <%= f.label :name %> <br>
   <%= f.text_field :name %><br>
-  <!--<%= f.label "Get Email" %> <br />
-  <%= f.check_box :name %> <br />
-  <%= f.collection_select @tags, :id, :name, {}, {:multiple => true} %>-->
   <%= f.submit %>
 <% end %>
 
