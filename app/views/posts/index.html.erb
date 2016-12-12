@@ -4,6 +4,7 @@
 <% @posts.each do |post| %>
   <p>Title: <%= post.title %></p>
   <p>Text: <%= post.text %></p>
+  <p> Tag: <%= post.tags.map {|c| c.name}.join(', ') %></p>
   <%= link_to 'Show', post %>
   <%= link_to 'Edit', edit_post_path(post) %>
   <%= link_to 'Delete', post_path(post), method: :delete %>

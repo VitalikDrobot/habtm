@@ -8,9 +8,11 @@ class PostsController < ApplicationController
 
 	def new
     @post = Post.new
+    @tags = Tag.all
 	end
 
 	def show 
+    @tag = @post.tags
 	end
 
 	def edit 
@@ -18,8 +20,6 @@ class PostsController < ApplicationController
 
 	def create
     post = Post.new(post_params)
-    @tags = Tag.where(:id => params[:tags])
-    @post.tags << @tags
     if post.save
       redirect_to post
     else
@@ -40,7 +40,9 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:post).permit(:title, :text, :tag_ids => [])
+
+
   end
 
   def current_post

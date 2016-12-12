@@ -8,6 +8,7 @@ class TagsController < ApplicationController
 
 	def new
     @tag = Tag.new
+    @posts = Post.all
 	end
 
 	def show 
@@ -38,7 +39,7 @@ class TagsController < ApplicationController
   private
 
   def tag_params
-    params.require(:tag).permit(:name)
+    params.require(:tag).permit(:name, :post_ids => [])
   end
 
   def current_tag
